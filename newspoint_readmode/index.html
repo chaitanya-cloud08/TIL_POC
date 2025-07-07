@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App Concept</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="mobile-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span class="time">9:41</span>
+            <div class="status-icons">
+                <i class="ri-signal-wifi-4-bar-line"></i>
+                <i class="ri-bar-chart-fill"></i>
+                <i class="ri-battery-fill"></i>
+            </div>
+        </div>
+
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="header-top">
+                <div class="header-left">
+<img src="image 13.png" alt="Newspoint logo" height="30" width="30">
+                    <i class="ri-add-line"></i>
+                </div>
+                <div class="header-right">
+                    <i class="ri-search-line"></i>
+                    <i class="ri-notification-3-line"></i>
+                    <i class="ri-user-line"></i>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <a href="#" class="active">For You</a>
+                <a href="#">IPL <i class="ri-arrow-down-s-line"></i></a>
+                <a href="#">Modi <i class="ri-arrow-down-s-line"></i></a>
+                <a href="#">Trump <i class="ri-arrow-down-s-line"></i></a>
+                <a href="#">Travel <i class="ri-arrow-down-s-line"></i></a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="news-card">
+                <div class="card-image-container">
+                    <img src="news.png" alt="Aircraft Carrier">
+                    <div class="image-overlay"></div>
+                    
+                </div>
+                <div class="card-content">
+                    <div class="card-source">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/The_Times_of_India_logo.svg/2560px-The_Times_of_India_logo.svg.png" alt="TOI Logo" class="source-logo">
+                        <div class="source-info">
+                            <span class="source-name">The Times Of India</span>
+                            <span class="source-date">Mon 05 May 2025  14hrs</span>
+                        </div>
+                        <i class="ri-whatsapp-line"></i>
+                    </div>
+                    <h1 class="card-headline">Ukraine's President Zelensky to BBC: Blood money being paid for Russian oil</h1>
+                    <div class="card-body-content">
+                        <!-- Content will be injected here by JavaScript -->
+                    </div>
+                    <div class="card-actions">
+                        <div class="card-actions-left">
+                            <i class="ri-menu-line" id="reopen-modal-trigger"></i>
+                            <i class="ri-bookmark-line"></i>
+                            <i class="ri-share-line"></i>
+                        </div>
+                        <a href="#" class="read-full">Read Full Story</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <footer class="bottom-nav">
+            <a href="#" class="nav-item active">
+                <i class="ri-home-5-fill"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-compass-3-line"></i>
+                <span>Discover</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-play-circle-line"></i>
+                <span>Video</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-gallery-line"></i>
+                <span>Carousel</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ri-earth-line"></i>
+                <span>Explore</span>
+            </a>
+        </footer>
+    </div>
+
+    <!-- Format Selection Modal -->
+    <div class="modal-overlay">
+        <div class="modal-container">
+            <div class="close-button-wrapper">
+                <button class="close-modal-btn"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-content">
+                <h2>Make news your vibe <span class="emoji">👇</span></h2>
+                <p>Pick your favorite format — we'll take care of the rest.</p>
+                <div class="format-options">
+                    <div class="format-option selected" data-format="bullets">
+                        <i class="ri-list-unordered"></i>
+                        <div class="option-text">
+                            <h3>3 Bullets</h3>
+                            <p>Three key points — straight to the point, no extras</p>
+                        </div>
+                    </div>
+                    <div class="format-option" data-format="genz">
+                        <i class="ri-chat-1-line"></i>
+                        <div class="option-text">
+                            <h3>Gen-Z Mode</h3>
+                            <p>A fun mix of slang and attitude — but all facts, no cap.</p>
+                        </div>
+                    </div>
+                    <div class="format-option" data-format="summary">
+                        <i class="ri-article-line"></i>
+                        <div class="option-text">
+                            <h3>Summary</h3>
+                            <p>A short and simple summary — just enough to get the gist.</p>
+                        </div>
+                    </div>
+                    <div class="format-option" data-format="language">
+                         <svg class="lang-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.68331 16.3333L7.99998 7.66666L11.3166 16.3333M10.5166 14.5H5.48331M12.6666 8.4111L14.4933 13.0889C14.71 13.6261 14.8192 14.2023 14.8166 14.7833H19.1666M16.6666 8.5C17.1666 7.58333 18.0833 6.33333 18.9166 5.83333C19.25 5.625 19.5 6 19.3333 6.33333C18.8333 7.5 17.8333 9.16666 17.5 9.83333M2.83331 19.1667C2.83331 20.1269 3.60642 20.9 4.56665 20.9H19.4333C20.3935 20.9 21.1666 20.1269 21.1666 19.1667V4.83333C21.1666 3.8731 20.3935 3.1 19.4333 3.1H4.56665C3.60642 3.1 2.83331 3.8731 2.83331 4.83333V19.1667Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                         </svg>
+                        <div class="option-text">
+                            <h3>Language</h3>
+                            <p>Pick the language you're most comfy with — we've got options!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
