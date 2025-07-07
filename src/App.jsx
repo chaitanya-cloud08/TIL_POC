@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TILpoc from './components/TILpoc';
-import PocViewer from './components/POCViewer';
+import PocViewer from './components/PocViewer';
 function App() {
   return (
     <BrowserRouter>
