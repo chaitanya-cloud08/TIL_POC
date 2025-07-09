@@ -173,7 +173,7 @@ function CodeTodDo() {
   if (gameStatus === 'setup') {
     return (
       <div className="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-4 font-sans">
-        <div className="text-center">
+        <div className="text-center -mt-44 ">
           <h1 className="text-4xl sm:text-5xl font-bold text-cyan-400">कोड तोड़ दो</h1>
           <h2 className="text-2xl sm:text-3xl mt-8 mb-4 text-gray-300">कठिनाई का स्तर चुनें</h2>
           <div className="flex flex-col space-y-4 w-64">
