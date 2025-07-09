@@ -4,7 +4,8 @@ export const pocs = [
   {
     id: 'newspoint-app',
     title: 'Newspoint Read Mode',
-    description: 'NewsPoint Read Mode offers three focused reading experiences: Original, GenZ Summary, and 3-Bullet Takeaways — tailored for every kind of reader.', 
+    description: 'NewsPoint Read Mode offers three focused reading experiences: Original, GenZ Summary, and 3-Bullet Takeaways — tailored for every kind of reader.',
+    type: 'react',
     source: NewsPointApp,
   },
   {
