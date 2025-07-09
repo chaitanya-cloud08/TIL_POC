@@ -102,14 +102,14 @@ function CodeTodDo() {
 
   return (
     // Responsive container: On small screens, content starts at the top. On larger screens, it's centered.
-    <div className="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-start sm:justify-center p-4 font-sans select-none scale-75">
+    <div className="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-start sm:justify-center p-4 font-sans select-none ">
       {/* max-w-sm is kept to prevent the layout from becoming too wide on desktops. */}
-      <main className="w-full max-w-sm mx-auto flex flex-col items-center space-y-3 sm:space-y-4">
+      <main className="w-full max-w-sm mx-auto flex flex-col items-center space-y-3 sm:space-y-4 scale-[0.7] -mt-32">
         
         <header className="text-center">
-          {/* Responsive text size for the main heading */}
-          <h1 className="text-4xl sm:text-5xl font-bold text-cyan-400">कोड तोड़ दो</h1>
-          {/* Responsive text size for the subtitle */}
+         
+          <h1 className="text-4xl sm:text-5xl font-bold text-cyan-400 p-2">कोड तोड़ दो</h1>
+          
           <p className="mt-1 text-sm sm:text-base text-gray-400">आपको {CODE_LENGTH} अंकों का गुप्त कोड तोड़ना है</p>
         </header>
 
