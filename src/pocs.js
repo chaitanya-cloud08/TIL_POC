@@ -1,5 +1,5 @@
 import NewsPointApp from './pocs/NewsPointApp';
-import CodeTodDo from './pocs/CodeTodDoGame'; 
+import CrackItGame from './pocs/CrackItGame'; 
 export const pocs = [
   {
     id: 'newspoint-app',
@@ -9,10 +9,10 @@ export const pocs = [
     source: NewsPointApp,
   },
   {
-    id: 'code-tod-do',
-    title: 'Code Tod Do',
-    description: ' A logic-based game where players guess a secret 3-digit code using clues. With each attempt, emoji feedback guides them closer to breaking the code in just 5 tries.',
+    id: 'crack-it',
+    title: 'CrackIt',
+    description: ' A number-based Wordle.Break the secret 3-digit code in 5 shots.Use emoji clues 🟢🟡🔴 to guide your logic.',
     type: 'react',
-    source: CodeTodDo,
+    source: CrackItGame,
   },
 ];
