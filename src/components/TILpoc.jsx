@@ -1,9 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import { pocs } from '../pocs'; // Import the centralized config
+import { Link } from 'react-router-dom'; 
+import { pocs } from '../pocs'; 
 
-// The card component no longer embeds content directly.
-// It now includes a button to navigate.
+
 const PocCard = ({ id, title, description }) => (
   <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col border border-slate-200 transition-shadow hover:shadow-xl">
     <div className="p-6 flex-grow">
@@ -12,7 +10,7 @@ const PocCard = ({ id, title, description }) => (
     </div>
     <div className="p-4 bg-slate-50 border-t border-slate-200">
       <Link
-        to={`/poc/${id}`} // Dynamically create the link URL
+        to={`/poc/${id}`} 
         className="w-full text-center inline-block px-4 py-2 font-semibold text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       >
         View POC

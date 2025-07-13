@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-// --- Icon Components (Matching your original Remix Icons) ---
-
 const Icon = ({ path, className = "w-6 h-6", fill = true }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className={className} fill={fill ? "currentColor" : "none"}>
         <path d={path} stroke={!fill ? "currentColor" : "none"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -56,7 +54,6 @@ const GenzContent = () => <p className="text-[15px] leading-relaxed text-[#333] 
 const SummaryContent = () => <p className="text-[15px] leading-relaxed text-[#555555]">In an interview with the BBC, Ukrainian President Volodymyr Zelensky stated that European nations continuing to purchase Russian oil are paying with "blood money." He specifically identified Germany and Hungary as countries hindering a complete oil embargo. Projections indicate Russia may earn as much as £250 billion ($326 billion) from its energy exports this year.</p>;
 const LanguageContent = () => <p className="text-[15px] leading-relaxed text-[#555555]">Language selection is not implemented in this demo, but this is where it would go!</p>;
 
-// --- Main App Component ---
 const NewsPointApp = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [currentFormat, setCurrentFormat] = useState('bullets');
@@ -90,7 +87,6 @@ const NewsPointApp = () => {
     return (
         <div className='flex justify-center items-center scale-75 -mt-24'>
         <div className="w-full max-w-[414px] h-[896px] bg-white shadow-xl rounded-[20px] overflow-hidden relative flex flex-col font-['Inter',_sans-serif] text-[#111]">
-            {/* Status Bar */}
             <div className="flex justify-between items-center px-5 py-2.5 text-sm font-semibold">
                 <span>9:41</span>
                 <div className="flex gap-1.5 items-center">
@@ -100,7 +96,6 @@ const NewsPointApp = () => {
                 </div>
             </div>
 
-            {/* App Header */}
             <header className="px-4 border-b border-[#e0e0e0]">
                 <div className="flex justify-between items-center py-2.5">
                     <div className="flex items-center gap-5">
@@ -128,7 +123,6 @@ const NewsPointApp = () => {
                 </nav>
             </header>
 
-            {/* Main Content */}
             <main className="flex-grow overflow-y-auto bg-[#f0f2f5] p-4">
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm">
                     <div className="relative">
@@ -160,7 +154,6 @@ const NewsPointApp = () => {
                 </div>
             </main>
 
-            {/* Bottom Navigation */}
             <footer className="flex justify-around py-2 border-t border-[#e0e0e0] bg-white">
                 <a href="#" className="flex flex-col items-center gap-1 no-underline text-[#E60023]"><HomeIcon /><span className="text-xs font-semibold">Home</span></a>
                 <a href="#" className="flex flex-col items-center gap-1 no-underline text-[#8e8e8e]"><CompassIcon /><span className="text-xs">Discover</span></a>
@@ -169,7 +162,6 @@ const NewsPointApp = () => {
                 <a href="#" className="flex flex-col items-center gap-1 no-underline text-[#8e8e8e]"><EarthIcon /><span className="text-xs">Explore</span></a>
             </footer>
 
-            {/* Modal Overlay & Container */}
             <div className={`absolute inset-0 z-50 transition-opacity duration-500 flex flex-col-reverse ${isModalVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                 <div className={`bg-white rounded-t-2xl shadow-[-5px_0_20px_rgba(0,0,0,0.1)] relative transform transition-transform duration-400 ease-[cubic-bezier(0.25,0.8,0.25,1)] ${isModalVisible ? 'translate-y-0' : 'translate-y-full'}`}>
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">

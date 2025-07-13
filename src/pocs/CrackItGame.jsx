@@ -44,7 +44,7 @@ function CrackIt() {
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [showModal, setShowModal] = useState(false);
-  const [showHowToPlay, setShowHowToPlay] = useState(false); // ✅ NEW
+  const [showHowToPlay, setShowHowToPlay] = useState(false); 
 
   const resetGame = useCallback((newDifficulty) => {
     const selectedDifficulty = newDifficulty || difficulty;
@@ -139,7 +139,7 @@ function CrackIt() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col">
-      {/* 🔤 Header */}
+     
       <header className="flex items-center justify-between p-4 border-b border-gray-700">
         <div className="flex items-center gap-2">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-wider">CrackIt</h1>
@@ -167,14 +167,13 @@ function CrackIt() {
         </div>
       </header>
 
-      {/* 🍞 Toast */}
       {showToast && (
         <div className="absolute top-20 left-1/2 -translate-x-1/2 bg-white text-black font-bold py-2 px-4 rounded shadow-md animate-bounce z-10">
           {toastMessage}
         </div>
       )}
 
-      {/* 🏆 Win/Loss Modal */}
+    
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
           <div className="bg-white text-black rounded-lg p-6 w-80 shadow-xl text-center">
@@ -194,7 +193,7 @@ function CrackIt() {
         </div>
       )}
 
-      {/* ❓ How to Play Modal */}
+     
       {showHowToPlay && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
           <div className="bg-white text-black rounded-lg p-6 w-96 max-w-full shadow-xl">
@@ -223,7 +222,7 @@ function CrackIt() {
         </div>
       )}
 
-      {/* Main Layout */}
+     
       <main className="flex flex-col lg:flex-row justify-center items-center gap-0 lg:gap-10 lg:items-start p-4 flex-grow">
         <div className="grid gap-2 lg:ml-14 p-4 -ml-4 lg:mt-20" style={{ gridTemplateRows: `repeat(${difficulty.maxGuesses}, 1fr)` }}>
           {Array.from({ length: difficulty.maxGuesses }).map((_, rowIndex) => {

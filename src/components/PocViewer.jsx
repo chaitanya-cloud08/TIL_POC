@@ -1,13 +1,11 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { pocs } from '../pocs'; // Import the same config
+import { pocs } from '../pocs'; 
 
-// This is the page that displays the selected POC
 export default function PocViewer() {
-  const { pocId } = useParams(); // Get the 'pocId' from the URL, e.g., "newspoint-readmode"
-  const poc = pocs.find((p) => p.id === pocId); // Find the matching POC in our config
+  const { pocId } = useParams(); 
+  const poc = pocs.find((p) => p.id === pocId); 
 
-  // Handle case where no POC is found for the given ID
+  
   if (!poc) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-slate-100 p-4">
@@ -20,7 +18,7 @@ export default function PocViewer() {
     );
   }
 
-  // Helper to render the correct type of POC
+ 
   const renderPocContent = () => {
     if (poc.type === 'react') {
       const PocComponent = poc.source;
@@ -32,7 +30,7 @@ export default function PocViewer() {
           src={poc.source}
           title={poc.title}
           className="w-full h-full border-0 rounded-lg"
-          style={{ height: '896px' }} // Give a fixed height for the mobile view
+          style={{ height: '896px' }} 
           sandbox="allow-scripts allow-same-origin"
         ></iframe>
       );
@@ -44,13 +42,7 @@ export default function PocViewer() {
     <div className="bg-gray-50 min-h-screen">
        <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          {/* <div>
-            <h1 className="text-2xl font-bold text-slate-800">{poc.title}</h1>
-            <p className="text-sm text-slate-500">{poc.description}</p>
-          </div> */}
-          {/* <Link to="/" className="text-sm font-semibold text-indigo-600 hover:text-indigo-800">
-            ← Back to Dashboard
-          </Link> */}
+          
         </div>
       </header>
 
