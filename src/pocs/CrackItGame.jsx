@@ -224,7 +224,7 @@ function CrackIt() {
 
      
       <main className="flex flex-col lg:flex-row justify-center items-center gap-0 lg:gap-10 lg:items-start p-4 flex-grow">
-        <div className="grid gap-2 lg:ml-14 p-4 -ml-4 lg:mt-20" style={{ gridTemplateRows: `repeat(${difficulty.maxGuesses}, 1fr)` }}>
+        <div className="grid gap-2 lg:ml-14 p-4 -ml-6 lg:mt-20" style={{ gridTemplateRows: `repeat(${difficulty.maxGuesses}, 1fr)` }}>
           {Array.from({ length: difficulty.maxGuesses }).map((_, rowIndex) => {
             const guessData = history[rowIndex];
             const isCurrentRow = rowIndex === history.length;
@@ -253,7 +253,7 @@ function CrackIt() {
           })}
         </div>
 
-        <div className="flex flex-col gap-2 w-full max-w-xs p-10 -ml-10 lg:-mr-96 lg:m-20">
+        <div className="flex flex-col gap-2 w-full max-w-xs p-10 -ml-2 lg:-mr-96 lg:m-20">
           <div className="grid grid-cols-5 gap-2">
             {'12345'.split('').map(d => (
               <Key key={d} value={d} status={keyStatus[d] || 'default'} onClick={handleKeyClick} />
