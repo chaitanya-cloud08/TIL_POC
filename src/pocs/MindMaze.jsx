@@ -201,19 +201,48 @@ const MindMaze = () => {
   };
   
   const renderHelpModal = () => (
-    <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4" onClick={() => setShowHelp(false)}>
-      <div className="bg-slate-800 text-slate-200 rounded-2xl shadow-2xl p-6 md:p-8 max-w-lg w-full border-t-4 border-sky-500" onClick={(e) => e.stopPropagation()}>
-        <h2 className="text-3xl font-bold text-sky-400 mb-4">How to Play MindMaze</h2>
-        <ul className="space-y-4 text-left text-lg">
-          <li className="flex items-start gap-3"><span className="mt-1">🎯</span><div><strong>The Goal:</strong> Guide your character (🚶) from the top-left to the goal (🏁) at the bottom-right.</div></li>
-          <li className="flex items-start gap-3"><span className="mt-1">⏳</span><div><strong>The Shifting Maze:</strong> The maze layout changes! When the timer bar runs out, the maze will <strong>shift</strong>, and the 'Shifts Left' counter will decrease.</div></li>
-          <li className="flex items-start gap-3"><span className="mt-1">⚠️</span><div><strong>The Warning:</strong> Tiles marked with an orange <strong>"!"</strong> are unstable. They will become walls in the next shift.</div></li>
-          <li className="flex items-start gap-3"><span className="mt-1">🛡️</span><div><strong>Holding Your Ground:</strong> Don't worry! If you are standing on a flickering tile <strong>when the maze shifts</strong>, you are safe and will not be pushed back.</div></li>
-          <li className="flex items-start gap-3"><span className="mt-1">❌</span><div><strong>Losing:</strong> The game is over if you run out of 'Shifts Left'. Plan your moves carefully!</div></li>
-        </ul>
-        <button onClick={() => setShowHelp(false)} className="mt-8 w-full py-3 bg-sky-600 text-white font-bold rounded-lg hover:bg-sky-500 transition-colors">Got It!</button>
-      </div>
-    </div>
+    <div
+  className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 sm:p-6"
+  onClick={() => setShowHelp(false)}
+>
+  <div
+    className="bg-slate-800 text-slate-200 rounded-2xl shadow-2xl p-5 sm:p-6 md:p-8 w-full max-w-md sm:max-w-lg border-t-4 border-sky-500 overflow-y-auto max-h-[90vh]"
+    onClick={(e) => e.stopPropagation()}
+  >
+    <h2 className="text-2xl sm:text-3xl font-bold text-sky-400 mb-4 text-center sm:text-left">
+      How to Play MindMaze
+    </h2>
+    <ul className="space-y-4 text-left text-base sm:text-lg">
+      <li className="flex items-start gap-3">
+        <span className="mt-1">🎯</span>
+        <div><strong>The Goal:</strong> Guide your character (🚶) from the top-left to the goal (🏁) at the bottom-right.</div>
+      </li>
+      <li className="flex items-start gap-3">
+        <span className="mt-1">⏳</span>
+        <div><strong>The Shifting Maze:</strong> The maze layout changes! When the timer bar runs out, the maze will <strong>shift</strong>, and the 'Shifts Left' counter will decrease.</div>
+      </li>
+      <li className="flex items-start gap-3">
+        <span className="mt-1">⚠️</span>
+        <div><strong>The Warning:</strong> Tiles marked with an orange <strong>"!"</strong> are unstable. They will become walls in the next shift.</div>
+      </li>
+      <li className="flex items-start gap-3">
+        <span className="mt-1">🛡️</span>
+        <div><strong>Holding Your Ground:</strong> Don't worry! If you are standing on a flickering tile <strong>when the maze shifts</strong>, you are safe and will not be pushed back.</div>
+      </li>
+      <li className="flex items-start gap-3">
+        <span className="mt-1">❌</span>
+        <div><strong>Losing:</strong> The game is over if you run out of 'Shifts Left'. Plan your moves carefully!</div>
+      </li>
+    </ul>
+    <button
+      onClick={() => setShowHelp(false)}
+      className="mt-6 sm:mt-8 w-full py-3 bg-sky-600 text-white font-bold rounded-lg hover:bg-sky-500 transition-colors"
+    >
+      Got It!
+    </button>
+  </div>
+</div>
+
   );
 
   const renderPauseOverlay = () => (
