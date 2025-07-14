@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        // Set 'noto' as our custom font family
+        sans: ['"Noto Sans Devanagari"', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

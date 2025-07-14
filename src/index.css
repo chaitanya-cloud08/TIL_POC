@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .keyboard-btn {
+    @apply w-10 h-10 text-xl bg-white rounded-md shadow-sm hover:bg-blue-100 active:bg-blue-200 font-bold flex items-center justify-center transition-colors;
+  }
+}

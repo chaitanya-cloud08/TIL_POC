@@ -138,7 +138,7 @@ function CrackIt() {
   };
 
   return (
-    <div className="-mt-2 bg-gray-900 text-white flex flex-col">
+    <div className="-mt-2 lg:min-h-screen bg-gray-900 text-white flex flex-col">
      
       <header className="flex items-center justify-between p-4 border-b border-gray-700">
         <div className="flex items-center gap-2">
