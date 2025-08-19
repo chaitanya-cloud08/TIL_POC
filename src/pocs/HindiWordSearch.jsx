@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-// --- AUTOMATED DATA LOADING ---
 // Make sure the path is correct relative to this file's location.
-// If this file is in 'src/components/', and the JSON is in 'src/data/', this path is correct.
 import puzzlesData from '../assets/HindiWordSearch.json';
 
 // --- Child Component 1: Scoreboard ---
@@ -14,34 +12,36 @@ const Scoreboard = ({
   onToggleWordList
 }) => {
   return (
-    <div className="w-full max-w-md my-4 p-4 bg-white rounded-lg shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div className="w-full max-w-xl my-4 p-2 sm:p-4 bg-white rounded-lg shadow-md flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
       <div className="text-center sm:text-left">
-        <span className="text-lg font-semibold">स्कोर: </span>
-        <span className="text-xl font-bold text-blue-500">{score}</span>
+        {/* Responsive text size */}
+        <span className="text-base sm:text-lg font-semibold">स्कोर: </span>
+        <span className="text-lg sm:text-xl font-bold text-blue-500">{score}</span>
       </div>
+      {/* Buttons now wrap cleanly and have responsive padding/text size */}
       <div className="flex items-center gap-2 flex-wrap justify-center">
         <button
           onClick={onToggleWordList}
-          className="px-4 py-2 bg-teal-500 text-white font-semibold rounded-lg shadow-sm hover:bg-teal-600 transition-colors"
+          className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-teal-500 text-white font-semibold rounded-lg shadow-sm hover:bg-teal-600 transition-colors"
         >
           {isWordListVisible ? 'शब्द छिपाएँ' : 'शब्द दिखाएँ'}
         </button>
         <button
           onClick={onHint}
-          className={`px-4 py-2 bg-amber-500 text-white font-semibold rounded-lg shadow-sm transition-colors ${score <= 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-amber-600'}`}
+          className={`px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-amber-500 text-white font-semibold rounded-lg shadow-sm transition-colors ${score <= 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-amber-600'}`}
           disabled={score <= 0}
         >
           संकेत (-5)
         </button>
         <button
           onClick={onReset}
-          className="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-sm hover:bg-red-600 transition-colors"
+          className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-red-500 text-white font-semibold rounded-lg shadow-sm hover:bg-red-600 transition-colors"
         >
           रीसेट
         </button>
         <button
           onClick={onNextPuzzle}
-          className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-sm hover:bg-blue-600 transition-colors"
+          className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-blue-500 text-white font-semibold rounded-lg shadow-sm hover:bg-blue-600 transition-colors"
         >
           अगला
         </button>
@@ -65,8 +65,9 @@ const Grid = ({
   const isHinted = (r, c) => hintedCell && hintedCell.r === r && hintedCell.c === c;
 
   return (
+    // Responsive padding for the grid container
     <div
-      className="grid grid-cols-12 gap-1 bg-slate-300 p-2 rounded-lg shadow-lg"
+      className="grid grid-cols-12 gap-1 bg-slate-300 p-1 sm:p-2 rounded-lg shadow-lg"
       style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
       onMouseUp={onCellMouseUp}
       onTouchEnd={onCellMouseUp}
@@ -76,7 +77,14 @@ const Grid = ({
         row.map((cell, c) => (
           <div
             key={`${r}-${c}`}
-            className={`flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-lg sm:text-xl md:text-2xl font-bold cursor-pointer rounded-md transition-colors duration-150 ${isFound(r, c) ? 'bg-emerald-500 text-white' : isSelected(r, c) ? 'bg-blue-500 text-white' : isHinted(r, c) ? 'bg-amber-500 text-white animate-pulse' : 'bg-slate-50 text-slate-800'}`}
+            // --- CRITICAL RESPONSIVE CHANGE ---
+            // Sizes and text now scale up from a smaller mobile-first base
+            className={`flex items-center justify-center 
+              w-7 h-7 text-sm 
+              sm:w-9 sm:h-9 sm:text-lg 
+              md:w-11 md:h-11 md:text-xl
+              font-bold cursor-pointer rounded-md transition-colors duration-150 
+              ${isFound(r, c) ? 'bg-emerald-500 text-white' : isSelected(r, c) ? 'bg-blue-500 text-white' : isHinted(r, c) ? 'bg-amber-500 text-white animate-pulse' : 'bg-slate-50 text-slate-800'}`}
             onMouseDown={() => onCellMouseDown(r, c)}
             onMouseEnter={() => onCellMouseEnter(r, c)}
             onTouchStart={(e) => { e.preventDefault(); onCellMouseDown(r, c); }}
@@ -95,13 +103,15 @@ const Grid = ({
 // --- Child Component 3: WordList ---
 const WordList = ({ words, foundWords }) => {
   return (
-    <div className="w-full max-w-md mt-4 p-4 bg-white rounded-lg shadow-md">
+    <div className="w-full max-w-xl mt-4 p-4 bg-white rounded-lg shadow-md">
       <h3 className="text-xl font-bold text-center text-slate-800 mb-3">शब्द सूची</h3>
+      {/* This grid layout is already responsive */}
       <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-center">
         {words.map((word, index) => (
           <li
             key={index}
-            className={`text-lg transition-all duration-300 ${foundWords.includes(word) ? 'line-through text-slate-400' : 'text-slate-800'}`}
+            // Responsive text size for the words
+            className={`text-base sm:text-lg transition-all duration-300 ${foundWords.includes(word) ? 'line-through text-slate-400' : 'text-slate-800'}`}
           >
             {word}
           </li>
@@ -113,6 +123,7 @@ const WordList = ({ words, foundWords }) => {
 
 // --- Main Game Component ---
 const HindiWordSearch = () => {
+  // All state and logic hooks remain unchanged
   const [currentPuzzleIndex, setCurrentPuzzleIndex] = useState(0);
   const [puzzle, setPuzzle] = useState(puzzlesData[0]);
   const [score, setScore] = useState(0);
@@ -189,16 +200,19 @@ const HindiWordSearch = () => {
   }
 
   return (
-    <div className="bg-slate-50 text-slate-800 flex flex-col items-center p-4">
-      <header className="text-center my-4">
-        <h1 className="text-4xl font-bold text-blue-500">हिन्दी शब्द खोज</h1>
-        <h2 className="text-2xl mt-1 text-slate-600">{puzzle.theme}</h2>
+    // Responsive padding on the main container
+    <div className="bg-slate-50 text-slate-800 flex flex-col items-center w-full min-h-screen p-2 sm:p-4">
+      <header className="text-center my-4 w-full">
+        {/* Responsive text size for headers */}
+        <h1 className="text-3xl sm:text-4xl font-bold text-blue-500">हिन्दी शब्द खोज</h1>
+        <h2 className="text-lg sm:text-2xl mt-1 text-slate-600">{puzzle.theme}</h2>
       </header>
-      <main className="flex flex-col items-center">
+      <main className="flex flex-col items-center w-full">
         <Scoreboard score={score} onHint={handleHint} onNextPuzzle={handleNextPuzzle} onReset={handleReset} isWordListVisible={isWordListVisible} onToggleWordList={toggleWordList} />
         {allWordsFound && (
-          <div className="my-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center">
-            <h3 className="font-bold text-xl">बधाई हो! आपने सभी शब्द ढूंढ लिए!</h3>
+          <div className="my-4 p-4 w-full max-w-xl bg-green-100 border border-green-400 text-green-700 rounded-lg text-center">
+            {/* Responsive text size for completion message */}
+            <h3 className="font-bold text-lg sm:text-xl">बधाई हो! आपने सभी शब्द ढूंढ लिए!</h3>
             <button onClick={handleNextPuzzle} className="mt-2 px-4 py-2 bg-emerald-500 text-white font-semibold rounded-lg">अगली पहेली खेलें</button>
           </div>
         )}
