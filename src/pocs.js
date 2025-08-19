@@ -2,6 +2,7 @@ import NewsPointApp from './pocs/NewsPointApp';
 import CrackItGame from './pocs/CrackItGame';
 import MindMaze from './pocs/MindMaze'; 
 import HindiMiniCrossword from './pocs/HindiMiniCrossword';
+import HindiWordSearch from './pocs/HindiWordSearch';
 export const pocs = [
   {
     id: 'newspoint-app',
@@ -30,5 +31,12 @@ export const pocs = [
     description: 'A fun and fast 5x5 Hindi crossword game built on everyday logic and common knowledge. Read the clues, fill the letters, and solve the full puzzle!',
     type: 'react',
     source: HindiMiniCrossword,
+  },
+  {
+    id: 'hindi-word-search',
+    title: 'HindiWordSearch',
+    description: "Select hidden Hindi words by dragging across the grid. Utilize a versatile hint system that either reveals a letter's location or instantly solves an entire word for a score penalty.",
+    type: 'react',
+    source: HindiWordSearch,
   },
 ];
